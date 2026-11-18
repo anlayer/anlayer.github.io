@@ -57,6 +57,31 @@ CSS = """
   .home-entry a{display:inline-block;background:var(--red);color:#fff;text-decoration:none;
     padding:9px 20px;border-radius:8px;font-weight:600;transition:.2s;}
   .home-entry a:hover{background:#991b1b;}
+  /* 搜索与刷新工具栏 */
+  .toolbar{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;margin-bottom:26px;box-shadow:var(--shadow);}
+  .toolbar-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .search-wrap{position:relative;flex:1;min-width:220px;}
+  .search-input{width:100%;font-size:15px;padding:11px 14px 11px 40px;border:1px solid var(--line);
+    border-radius:8px;outline:none;background:#fff;color:var(--ink);}
+  .search-input:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(30,58,95,.08);}
+  .search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:16px;}
+  .btn-refresh,.btn-rebuild{font-size:13px;padding:10px 16px;border-radius:8px;cursor:pointer;
+    text-decoration:none;white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--ink-2);}
+  .btn-refresh{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .btn-refresh:hover{background:#162d4a;}
+  .btn-rebuild:hover{border-color:var(--navy);color:var(--navy);}
+  .toolbar-meta{font-size:11.5px;color:var(--ink-3);margin-top:10px;}
+  .toolbar-meta a{color:var(--navy);border-bottom:1px dotted #9fb3c8;text-decoration:none;}
+  #searchResults{margin-top:12px;}
+  .search-count{font-size:12px;color:var(--ink-3);margin-bottom:8px;}
+  .search-hit{display:block;padding:10px 12px;border-left:3px solid var(--navy);
+    background:var(--navy-soft);border-radius:0 6px 6px 0;margin-bottom:8px;text-decoration:none;}
+  .search-hit:hover{border-left-color:var(--red);}
+  .search-hit .s-cat{display:inline-block;font-size:11px;color:#fff;background:var(--navy);
+    padding:1px 7px;border-radius:4px;margin-right:8px;}
+  .search-hit .s-title{font-size:14px;color:var(--ink);font-weight:600;}
+  .search-hit .s-sub{font-size:11.5px;color:var(--ink-3);margin-top:3px;}
   .oil-src{font-size:11.5px;color:var(--ink-3);margin-top:12px;}
   .oil-src a{color:var(--navy);text-decoration:none;border-bottom:1px dotted #9fb3c8;}
   .flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;}

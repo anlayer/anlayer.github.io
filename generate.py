@@ -165,6 +165,74 @@ function renderOil(name){{
 """
 
 
+ACTIONS_URL = "https://github.com/anlayer/anlayer.github.io/actions/workflows/update.yml"
+
+
+def toolbar_html():
+    """顶部工具栏：实时搜索今日全部新闻 + 刷新显示。"""
+    return f"""
+  <div class="toolbar" id="toolbar">
+    <div class="toolbar-row">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input class="search-input" id="newsSearch" type="search" autocomplete="off"
+               placeholder="搜索今日新闻：输入关键词，实时查找标题、摘要、来源">
+      </div>
+      <button class="btn-refresh" id="refreshBtn" type="button">刷新页面</button>
+      <a class="btn-rebuild" href="{ACTIONS_URL}" target="_blank" rel="noopener"
+         title="需登录 GitHub 后点击 Run workflow">重新抓取数据 →</a>
+    </div>
+    <div class="toolbar-meta">搜索覆盖今日全部新闻；“刷新页面”重新载入最新已发布内容；
+      要立即重新抓取新闻和油价，请点“重新抓取数据”在 GitHub 上运行（需登录）</div>
+    <div id="searchResults"></div>
+  </div>"""
+
+
+SEARCH_JS_TEMPLATE = r"""
+<script>
+var SEARCH_DATA = __SEARCH_DATA__;
+(function(){
+  var input = document.getElementById('newsSearch');
+  var box = document.getElementById('searchResults');
+  function esc(s){ var d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+  if(input && box){
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase();
+      if(!q){ box.innerHTML=''; return; }
+      var hits = SEARCH_DATA.filter(function(n){
+        return (n.t+' '+n.d+' '+n.s+' '+n.c).toLowerCase().indexOf(q)>=0;
+      }).slice(0,20);
+      if(hits.length===0){ box.innerHTML='<div class="search-count">没有找到匹配的新闻，换个关键词试试。</div>'; return; }
+      var out = '<div class="search-count">找到 '+hits.length+' 条结果（最多显示 20 条）：</div>';
+      hits.forEach(function(n){
+        out += '<a class="search-hit" href="'+esc(n.l)+'" target="_blank" rel="noopener">'
+             + '<span class="s-cat">'+esc(n.c)+'</span>'
+             + '<span class="s-title">'+esc(n.t)+'</span>'
+             + '<div class="s-sub">'+esc(n.s)+' · '+esc(n.m)+'</div></a>';
+      });
+      box.innerHTML = out;
+    });
+  }
+  var btn = document.getElementById('refreshBtn');
+  if(btn) btn.addEventListener('click', function(){
+    var sep = location.href.indexOf('?')>=0 ? '&' : '?';
+    location.href = location.pathname + sep + 't=' + Date.now();
+  });
+})();
+</script>
+"""
+
+
+def search_js(items):
+    data = []
+    for i in items:
+        t = i["time"].strftime("%m-%d %H:%M") if i["time"] else "时间未获取到"
+        data.append({"t": i["title"], "d": i["desc"][:120], "s": i["source"],
+                     "c": i["cat"], "l": i["link"], "m": t})
+    data_json = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    return SEARCH_JS_TEMPLATE.replace("__SEARCH_DATA__", data_json)
+
+
 def oil_js(oil_data):
     data_json = json.dumps(oil_data, ensure_ascii=False, separators=(",", ":"))
     prod_json = json.dumps(PRODUCTS, ensure_ascii=False)
@@ -487,6 +555,7 @@ def main():
     body = f"""
 {header_html(stamp, cat_line)}
 <div class="wrap">
+  {toolbar_html()}
   <section>
     <div class="sec-head"><span class="sec-no">00</span><h2>最值得关注</h2><span class="sec-note">今日速览 TOP 6 + 油价</span></div>
     {oil_html(oil_data)}
@@ -497,7 +566,8 @@ def main():
   {footer_html(home=True)}
 </div>
 {oil_js(oil_data)}
-{geo_js("provinceSel", "locTip")}"""
+{geo_js("provinceSel", "locTip")}
+{search_js(items)}"""
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(page(f"今日热点速览 · {today}", body))
 
