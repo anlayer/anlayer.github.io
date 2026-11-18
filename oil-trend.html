@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>油价变化趋势 · 2026年11月18日</title>
+<meta name="description" content="今日热点速览，来源可核查。">
+<style>
+  :root{
+    --bg:#f4f6f9;--card:#ffffff;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#6b7280;
+    --line:#e5e7eb;--navy:#1e3a5f;--navy-soft:#eef2f7;--red:#b91c1c;--red-soft:#fef2f2;
+    --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.05);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
+  header{background:linear-gradient(135deg,#1e3a5f 0%,#2c5282 55%,#1a365d 100%);color:#fff;
+    padding:46px 0 40px;margin-bottom:28px;border-bottom:4px solid var(--red);}
+  .h-inner{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+    padding:5px 12px;border-radius:999px;margin-bottom:16px;}
+  header h1{font-size:36px;line-height:1.25;margin:0 0 12px;letter-spacing:.5px;}
+  header h1 a{color:inherit;text-decoration:none;}
+  .dateline{font-size:15px;color:rgba(255,255,255,.82);margin:0;}
+  .dateline b{color:#fff;font-weight:600;}
+  .h-meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:rgba(255,255,255,.72);}
+  .h-meta span{display:inline-flex;align-items:center;gap:7px;}
+  .dot{width:6px;height:6px;border-radius:50%;background:#fca5a5;display:inline-block;}
+  section{margin-top:34px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--navy);}
+  .sec-no{font-size:13px;font-weight:700;color:var(--red);letter-spacing:.1em;}
+  .sec-head h2{font-size:22px;margin:0;color:var(--navy);letter-spacing:.5px;}
+  .sec-note{font-size:12px;color:var(--ink-3);margin-left:auto;}
+  /* ---------- Oil price ---------- */
+  .oil{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);
+    border-radius:10px;padding:18px 22px;box-shadow:var(--shadow);margin-bottom:16px;}
+  .oil-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:14px;}
+  .oil-head h3{font-size:17px;margin:0;color:var(--navy);}
+  .oil-head .oil-meta{font-size:12px;color:var(--ink-3);margin-left:auto;}
+  .oil-ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px;}
+  .oil-ctrl label{font-size:13px;color:var(--ink-2);}
+  .oil-ctrl select{font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:6px;
+    background:#fff;color:var(--ink);cursor:pointer;}
+  .trend-btn{font-size:13px;color:#fff;background:var(--navy);text-decoration:none;
+    border-radius:6px;padding:6px 14px;white-space:nowrap;}
+  .trend-btn:hover{background:var(--red);}
+  .oil-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;}
+  .oil-item{background:var(--navy-soft);border-radius:8px;padding:12px 14px;text-align:center;}
+  .oil-name{font-size:12px;color:var(--ink-2);display:block;margin-bottom:4px;}
+  .oil-val{font-size:22px;color:var(--red);font-weight:800;line-height:1.2;}
+  .oil-unit{font-size:11px;color:var(--ink-3);margin-left:2px;font-weight:400;}
+  .loc-tip{font-size:11.5px;color:var(--ink-3);margin-left:auto;white-space:nowrap;}
+  .loc-tip.ok{color:#15803d;}
+  .loc-tip.warn{color:#b91c1c;}
+  .home-entry{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--ink-2);}
+  .home-entry a{display:inline-block;background:var(--red);color:#fff;text-decoration:none;
+    padding:9px 20px;border-radius:8px;font-weight:600;transition:.2s;}
+  .home-entry a:hover{background:#991b1b;}
+  .oil-src{font-size:11.5px;color:var(--ink-3);margin-top:12px;}
+  .oil-src a{color:var(--navy);text-decoration:none;border-bottom:1px dotted #9fb3c8;}
+  .flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;}
+  .flash{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--red);
+    border-radius:10px;padding:18px 18px 16px;box-shadow:var(--shadow);display:flex;gap:14px;}
+  .flash-num{flex:0 0 34px;height:34px;border-radius:8px;background:var(--red-soft);color:var(--red);
+    font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;}
+  .flash h3{font-size:16px;line-height:1.5;margin:1px 0 6px;color:var(--ink);}
+  .flash h3 a{color:inherit;text-decoration:none;}
+  .flash h3 a:hover{color:var(--red);}
+  .flash p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .flash-tag{display:inline-block;font-size:11px;color:var(--navy);background:var(--navy-soft);
+    border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:1px;}
+  .news-list{display:grid;gap:12px;}
+  article.news{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--navy);
+    border-radius:8px;padding:16px 20px 14px;box-shadow:var(--shadow);}
+  article.news:hover{border-left-color:var(--red);}
+  .news-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;}
+  .news-top h3{font-size:16.5px;margin:0;flex:1 1 460px;line-height:1.5;color:var(--ink);}
+  .news-top h3 a{color:inherit;text-decoration:none;}
+  .news-top h3 a:hover{color:var(--red);}
+  .when{flex:0 0 auto;font-size:12px;color:var(--navy);background:var(--navy-soft);
+    border-radius:5px;padding:2px 9px;white-space:nowrap;}
+  .summary{font-size:14px;color:var(--ink-2);margin:8px 0 10px;}
+  .meta{font-size:12px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 18px;}
+  .meta a{color:var(--navy);text-decoration:none;border-bottom:1px dotted #9fb3c8;}
+  .meta a:hover{color:var(--red);border-bottom-color:var(--red);}
+  .more{display:inline-block;font-size:13px;color:var(--navy);text-decoration:none;
+    background:var(--navy-soft);border-radius:6px;padding:4px 12px;margin-left:auto;}
+  .more:hover{background:var(--navy);color:#fff;}
+  .back{display:inline-block;font-size:13px;color:var(--navy);text-decoration:none;
+    background:var(--navy-soft);border-radius:6px;padding:4px 12px;margin-bottom:4px;}
+  .back:hover{background:var(--navy);color:#fff;}
+  footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3);}
+  footer h4{font-size:13px;color:var(--ink-2);margin:0 0 8px;}
+  footer ul{margin:0;padding-left:18px;} footer li{margin-bottom:5px;}
+  /* ---------- Trend page ---------- */
+  .trend-panel{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);
+    border-radius:10px;padding:22px 24px;box-shadow:var(--shadow);}
+  .trend-ctrl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px;}
+  .trend-ctrl label{font-size:13px;color:var(--ink-2);}
+  .trend-ctrl select{font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:6px;
+    background:#fff;color:var(--ink);cursor:pointer;}
+  .trend-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:18px 0;}
+  .stat{background:var(--navy-soft);border-radius:8px;padding:14px;text-align:center;}
+  .stat-label{font-size:12px;color:var(--ink-2);display:block;}
+  .stat-val{font-size:20px;font-weight:800;color:var(--navy);}
+  .stat-val.up{color:var(--red);} .stat-val.down{color:var(--green,#15803d);}
+  .chart-wrap{width:100%;overflow-x:auto;}
+  .chart-wrap svg{display:block;width:100%;height:auto;min-width:600px;}
+  .chart-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--ink-2);margin-top:12px;}
+  .chart-legend i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:5px;vertical-align:3px;}
+  .trend-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;}
+  .trend-table th,.trend-table td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);}
+  .trend-table th{background:var(--navy-soft);color:var(--navy);font-weight:600;}
+  .trend-table tr:hover td{background:#fafbfc;}
+  .delta-up{color:var(--red);} .delta-down{color:var(--green,#15803d);}
+  @media (max-width:640px){header h1{font-size:28px;}.sec-note{display:none;}
+    article.news{padding:14px 15px;}.flash{padding:15px;}}
+</style>
+</head>
+<body>
+
+
+<header><div class="h-inner">
+  <span class="kicker">Daily Briefing · 公开信源核验</span>
+  <h1>油价变化趋势</h1>
+  <p class="dateline"><b>2026年11月18日　星期三　22:33 更新</b>　|　油价变化趋势 · 历史调价走势</p>
+  <div class="h-meta">
+    <span><i class="dot"></i>内容自动抓取自公开 RSS 源</span>
+    <span><i class="dot"></i>点击标题可跳转原文核对</span>
+    <a class="back" href="index.html">← 返回首页</a>
+  </div>
+</div></header>
+<div class="wrap">
+  <section>
+    <div class="sec-head"><span class="sec-no">01</span><h2>历史调价走势</h2><span class="sec-note">数据来自公开油价查询页</span></div>
+    <div class="trend-panel">
+      <div class="trend-ctrl">
+        <label for="trendProv">地区</label><select id="trendProv"><option value="北京">北京</option><option value="上海">上海</option><option value="天津">天津</option><option value="重庆">重庆</option><option value="河北">河北</option><option value="山西">山西</option><option value="辽宁">辽宁</option><option value="吉林">吉林</option><option value="黑龙江">黑龙江</option><option value="江苏">江苏</option><option value="浙江">浙江</option><option value="安徽">安徽</option><option value="福建">福建</option><option value="江西">江西</option><option value="山东">山东</option><option value="河南">河南</option><option value="湖北">湖北</option><option value="湖南">湖南</option><option value="广东">广东</option><option value="广西">广西</option><option value="海南">海南</option><option value="四川">四川</option><option value="贵州">贵州</option><option value="云南">云南</option><option value="西藏">西藏</option><option value="陕西">陕西</option><option value="甘肃">甘肃</option><option value="青海">青海</option><option value="宁夏">宁夏</option><option value="新疆">新疆</option><option value="内蒙古">内蒙古</option></select>
+        <label for="trendProd">油品</label><select id="trendProd"><option value="92号汽油">92号汽油</option><option value="95号汽油">95号汽油</option><option value="98号汽油">98号汽油</option><option value="0号柴油">0号柴油</option></select>
+        <span class="loc-tip" id="locTipTrend">正在自动定位…</span>
+      </div>
+      <div class="trend-stats" id="trendStats"></div>
+      <div class="chart-wrap" id="chartBox"></div>
+      <div class="chart-legend">
+        <span><i style="background:#b91c1c"></i>92号汽油</span>
+        <span><i style="background:#1e3a5f"></i>95号汽油</span>
+        <span><i style="background:#92400e"></i>98号汽油</span>
+        <span><i style="background:#15803d"></i>0号柴油</span>
+      </div>
+      <table class="trend-table">
+        <thead><tr><th>调整日期</th><th>价格（元/升）</th><th>较上次变化</th></tr></thead>
+        <tbody id="trendTbody"></tbody>
+      </table>
+    </div>
+  </section>
+  
+<footer>
+  <h4>信息核实说明</h4>
+  <ul>
+    <li>所有条目来自公开 RSS 源（人民网、中新网、IT之家等），标题、时间与来源均可点击原文核对。</li>
+    <li>发生时间以来源发布时间为准；部分源仅提供发布日期，已按原文展示。</li>
+    <li>本页由脚本自动生成，为聚合展示，不代表本站观点。</li>
+  </ul>
+</footer>
+</div>
+
+<script>
+var HDATA = {"北京":{"slug":"beijing","prices":{"92号汽油":"8.37","95号汽油":"8.91","98号汽油":"10.41","0号柴油":"8.11"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-05","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.78,8.35,7.94,7.18,7.42,7.97,7.78,8.09,8.29,8.61,8.89,8.37],"95号汽油":[9.34,8.89,8.45,7.64,7.9,8.48,8.29,8.61,8.83,9.17,9.46,9.46],"98号汽油":[10.39,10.39,9.95,9.14,9.4,9.98,9.79,10.11,10.33,10.67,10.96,10.41],"0号柴油":[8.53,8.53,7.66,6.87,7.12,7.69,7.5,7.81,8.02,8.36,8.65,8.65]}}},"上海":{"slug":"shanghai","prices":{"92号汽油":"8.33","95号汽油":"8.87","98号汽油":"10.87","0号柴油":"8.03"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-10-30","2026-10-31","2026-11-13","2026-11-14","2026-11-18"],"series":{"92号汽油":[8.85,8.85,8.85,8.33,8.33],"95号汽油":[9.41,9.41,9.41,8.87,8.87],"98号汽油":[11.12,11.41,10.87,10.87,10.87],"0号柴油":[8.57,8.57,8.57,8.03,8.57]}}},"天津":{"slug":"tianjin","prices":{"92号汽油":"8.36","95号汽油":"8.84","98号汽油":"10.34","0号柴油":"8.06"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-19","2026-07-04","2026-07-08","2026-07-18","2026-08-01","2026-08-02","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[7.93,7.17,7.93,7.41,7.96,7.96,7.78,8.08,8.29,8.61,8.88,8.88],"95号汽油":[8.38,7.57,8.38,7.83,8.41,8.41,8.22,8.54,8.76,9.09,9.39,9.39],"98号汽油":[9.88,9.07,9.07,10.48,10.48,9.91,9.72,10.04,10.04,10.59,10.59,10.34],"0号柴油":[7.61,6.82,7.61,7.07,7.64,7.64,7.45,7.76,7.98,8.31,8.6,8.06]}}},"重庆":{"slug":"chongqing","prices":{"92号汽油":"8.43","95号汽油":"8.90","98号汽油":"10.75","0号柴油":"8.11"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-22","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.83,8.41,8,7.25,7.49,8.03,7.85,8.14,8.35,8.67,8.94,8.43],"95号汽油":[9.33,8.89,8.45,7.66,7.91,8.48,8.29,8.61,8.82,9.16,9.45,8.9],"98号汽油":[11.39,11.02,10.58,9.79,10.04,10.61,10.42,10.74,11.11,11.54,11.91,11.21],"0号柴油":[8.52,8.1,7.67,6.9,7.14,7.7,7.51,7.82,8.03,8.36,8.64,8.11]}}},"河北":{"slug":"hebei","prices":{"92号汽油":"8.36","95号汽油":"8.84","98号汽油":"9.66","0号柴油":"8.06"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-19","2026-07-04","2026-07-06","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-13","2026-11-14"],"series":{"92号汽油":[7.93,7.17,7.17,7.41,7.96,7.78,8.08,8.29,8.61,8.88,8.36,8.36],"95号汽油":[8.38,7.57,7.57,7.83,8.41,8.22,8.54,8.76,9.09,9.39,9.39,8.84],"98号汽油":[11.35,11.35,11.35,11.35,11.35,11.35,11.35,11.35,11.35,11.35,11.35,11.35],"0号柴油":[7.61,6.82,7.02,7.07,7.64,7.45,7.76,7.98,8.31,8.6,8.6,8.06]}}},"山西":{"slug":"shanxi","prices":{"92号汽油":"8.31","95号汽油":"8.97","98号汽油":"10.15","0号柴油":"8.13"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-07-04","2026-07-18","2026-08-01","2026-08-02","2026-08-22","2026-08-29","2026-09-12","2026-09-13","2026-09-25","2026-10-30","2026-11-13","2026-11-14"],"series":{"92号汽油":[7.13,7.37,7.92,7.92,7.73,8.03,8.24,8.24,8.55,8.82,8.82,8.31],"95号汽油":[7.7,7.96,8.54,8.54,8.35,8.67,8.89,8.89,9.23,9.53,9.53,8.97],"98号汽油":[8.7,8.96,8.96,9.54,9.35,9.67,9.67,9.89,10.23,10.53,9.97,9.97],"0号柴油":[6.89,7.14,7.14,7.71,7.52,7.83,8.04,8.04,8.38,8.67,8.13,8.13]}}},"辽宁":{"slug":"liaoning","prices":{"92号汽油":"8.44","95号汽油":"9.02","98号汽油":"9.89","0号柴油":"7.95"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-02","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.42,8.01,7.23,7.48,7.48,8.03,7.85,8.15,8.36,8.68,8.96,8.44],"95号汽油":[9.01,8.56,7.73,8,8.59,8.59,8.39,8.72,8.94,9.29,9.58,9.02],"98号汽油":[8.78,8.78,8.78,8.78,9.41,9.41,9.41,9.41,9.41,9.41,9.41,9.41],"0号柴油":[7.93,7.51,6.73,6.98,7.53,7.53,7.35,7.65,7.87,8.19,8.48,7.95]}}},"吉林":{"slug":"jilin","prices":{"92号汽油":"8.33","95号汽油":"8.99","98号汽油":"9.79","0号柴油":"7.97"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-19","2026-07-04","2026-07-09","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-13","2026-11-14"],"series":{"92号汽油":[7.9,7.14,7.14,7.38,7.93,7.75,8.05,8.26,8.57,8.85,8.85,8.33],"95号汽油":[8.53,7.7,7.7,7.96,8.56,8.36,8.68,8.91,9.25,9.55,9.55,8.99],"98号汽油":[9.29,8.39,8.39,8.68,9.32,9.11,9.46,9.71,10.08,10.4,9.79,9.79],"0号柴油":[7.53,6.74,6.94,6.99,7.55,7.36,7.67,7.88,8.21,8.5,8.5,7.97]}}},"黑龙江":{"slug":"heilongjiang","prices":{"92号汽油":"8.40","95号汽油":"8.97","98号汽油":"10.17","0号柴油":"7.88"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-10-30","2026-11-01","2026-11-02","2026-11-13","2026-11-14"],"series":{"92号汽油":[8.85,8.92,8.92,8.92,8.4],"95号汽油":[9.48,9.53,9.53,9.53,8.97],"98号汽油":[10.75,10.75,10.8,10.8,10.17],"0号柴油":[8.36,8.41,8.41,7.88,7.88]}}},"江苏":{"slug":"jiangsu","prices":{"92号汽油":"8.34","95号汽油":"8.87","98号汽油":"10.94","0号柴油":"8.01"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-22","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.74,8.32,7.91,7.15,7.39,7.94,7.75,8.05,8.26,8.58,8.85,8.34],"95号汽油":[9.3,8.85,8.41,7.61,7.86,8.44,8.25,8.57,8.79,9.12,9.41,8.87],"98号汽油":[11.37,10.92,10.48,9.68,9.93,10.51,10.32,10.32,10.86,11.19,11.48,10.94],"0号柴油":[8.43,7.99,7.57,6.79,7.04,7.6,7.41,7.72,7.93,8.26,8.55,8.01]}}},"浙江":{"slug":"zhejiang","prices":{"92号汽油":"8.34","95号汽油":"8.87","98号汽油":"10.37","0号柴油":"8.03"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-09","2026-10-30","2026-11-14","2026-11-17"],"series":{"92号汽油":[7.91,7.15,7.39,7.94,7.75,8.05,8.26,8.58,8.58,8.85,8.34,8.34],"95号汽油":[8.41,7.61,7.86,8.44,8.25,8.57,8.79,9.12,9.12,9.42,8.87,8.87],"98号汽油":[9.93,9.13,9.38,9.96,9.77,10.09,10.31,10.64,11.62,10.94,10.39,10.39],"0号柴油":[7.59,6.81,7.06,7.62,7.43,7.74,7.95,8.28,8.28,8.57,8.03,8.57]}}},"安徽":{"slug":"anhui","prices":{"92号汽油":"8.31","95号汽油":"8.89","98号汽油":"10.39","0号柴油":"8.09"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-05","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.71,8.3,7.89,7.14,7.38,7.92,7.74,8.03,8.24,8.55,8.83,8.31],"95号汽油":[9.31,8.88,8.44,7.65,7.9,8.47,8.28,8.6,8.81,9.14,9.43,8.89],"98号汽油":[10.08,10.08,9.64,8.85,9.1,9.67,9.48,9.8,10.01,10.34,10.63,10.09],"0号柴油":[8.51,8.08,7.65,6.86,7.11,7.67,7.48,7.8,8.01,8.34,8.63,8.09]}}},"福建":{"slug":"fujian","prices":{"92号汽油":"8.33","95号汽油":"8.89","98号汽油":"10.39","0号柴油":"8.04"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-19","2026-06-30","2026-07-01","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[7.9,8.31,7.9,7.15,7.38,7.93,7.75,8.05,8.25,8.57,8.84,8.33],"95号汽油":[8.44,8.88,8.44,7.63,7.89,8.47,8.27,8.59,8.81,9.15,9.44,8.89],"98号汽油":[10.79,10.79,10.79,9.13,9.39,9.97,9.77,10.09,10.31,10.65,10.94,10.39],"0号柴油":[7.6,8.03,7.6,6.82,7.07,7.63,7.44,7.75,7.96,8.29,8.58,8.04]}}},"江西":{"slug":"jiangxi","prices":{"92号汽油":"8.33","95号汽油":"8.94","98号汽油":"10.44","0号柴油":"8.10"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-06","2026-06-19","2026-07-04","2026-07-11","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.31,7.9,7.14,7.14,7.38,7.93,7.74,8.04,8.25,8.56,8.84,8.33],"95号汽油":[8.92,8.48,7.67,7.67,7.92,8.51,8.31,8.63,8.86,9.19,9.49,8.94],"98号汽油":[9.59,9.15,8.78,8.78,9.03,9.62,9.42,9.74,9.97,10.3,10.6,10.05],"0号柴油":[8.09,7.66,6.87,7.46,7.12,7.69,7.5,7.81,8.02,8.35,8.64,8.1]}}},"山东":{"slug":"shandong","prices":{"92号汽油":"8.33","95号汽油":"8.94","98号汽油":"9.94","0号柴油":"7.96"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-06","2026-06-19","2026-07-04","2026-07-11","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.32,7.9,7.14,7.14,7.38,7.93,7.75,8.05,8.26,8.57,8.85,8.33],"95号汽油":[8.92,8.48,7.66,7.66,7.92,8.51,8.31,8.63,8.86,9.2,9.49,8.94],"98号汽油":[10.37,9.48,8.66,8.66,8.92,9.51,9.31,9.63,9.86,10.2,10.49,9.94],"0号柴油":[7.95,7.52,6.74,7.32,6.99,7.55,7.36,7.67,7.88,8.21,8.5,7.96]}}},"河南":{"slug":"henan","prices":{"92号汽油":"8.38","95号汽油":"8.95","98号汽油":"10.20","0号柴油":"8.04"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-07-14","2026-07-16","2026-07-18","2026-08-01","2026-08-02","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-13","2026-11-14"],"series":{"92号汽油":[7.18,7.18,7.43,7.98,7.98,7.79,8.09,8.3,8.62,8.9,8.9,8.38],"95号汽油":[8.08,7.67,7.93,8.52,8.52,8.32,8.64,8.87,9.21,9.5,9.5,8.95],"98号汽油":[8.52,8.52,8.78,8.78,9.37,9.37,9.37,9.37,9.37,9.67,9.11,9.11],"0号柴油":[7.2,7.2,7.06,7.62,7.62,7.43,7.74,7.96,8.29,8.58,8.58,8.04]}}},"湖北":{"slug":"hubei","prices":{"92号汽油":"8.38","95号汽油":"8.97","98号汽油":"10.57","0号柴油":"8.04"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-22","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.79,8.37,7.95,7.19,7.43,7.98,7.79,8.1,8.31,8.62,8.9,8.38],"95号汽油":[9.41,8.96,8.51,7.69,7.95,8.54,8.34,8.67,8.89,9.23,9.53,8.97],"98号汽油":[10.98,10.76,10.51,9.69,9.95,9.99,9.96,9.99,10.29,10.63,10.93,10.57],"0号柴油":[8.46,8.03,7.6,6.81,7.06,7.63,7.44,7.75,7.96,8.29,8.58,8.04]}}},"湖南":{"slug":"hunan","prices":{"92号汽油":"8.31","95号汽油":"8.84","98号汽油":"10.04","0号柴油":"8.12"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-07-18","2026-07-30","2026-07-31","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-10-31","2026-11-02","2026-11-14"],"series":{"92号汽油":[7.37,7.61,7.37,7.92,7.73,8.03,8.24,8.55,8.83,8.83,8.83,8.31],"95号汽油":[7.84,8.09,7.84,8.41,8.22,8.54,8.76,9.09,9.38,9.38,9.38,8.84],"98号汽油":[10.2,10.2,10.2,10.2,10.2,10.2,10.2,10.29,10.29,10.58,10.18,10.18],"0号柴油":[7.14,7.39,7.14,7.7,7.52,7.83,8.04,8.37,8.37,8.66,8.66,8.12]}}},"广东":{"slug":"guangdong","prices":{"92号汽油":"8.39","95号汽油":"9.09","98号汽油":"11.09","0号柴油":"8.06"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-22","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.79,8.37,7.96,7.2,7.44,7.99,7.8,8.1,8.31,8.63,8.91,8.39],"95号汽油":[9.53,9.07,8.62,7.8,8.06,8.65,8.45,8.78,9,9.35,9.65,9.09],"98号汽油":[13,13,13,13.5,13.5,13.5,13.5,13.5,13.5,13.5,13.5,13.5],"0号柴油":[8.47,8.04,7.62,6.83,7.08,7.64,7.45,7.76,7.98,8.31,8.6,8.06]}}},"广西":{"slug":"guangxi","prices":{"92号汽油":"8.43","95号汽油":"9.10","98号汽油":"10.38","0号柴油":"8.11"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-13","2026-11-14"],"series":{"92号汽油":[8.41,8,7.24,7.48,8.03,7.84,8.14,8.35,8.67,8.94,8.94,8.43],"95号汽油":[9.09,8.64,7.82,8.08,8.67,8.47,8.8,9.02,9.36,9.66,9.66,9.1],"98号汽油":[10.37,9.92,9.1,9.36,9.95,9.75,10.08,10.3,10.64,10.94,10.38,10.38],"0号柴油":[8.09,7.67,6.88,7.13,7.69,7.5,7.81,8.03,8.36,8.64,8.64,8.11]}}},"海南":{"slug":"hainan","prices":{"92号汽油":"9.48","95号汽油":"10.08","98号汽油":"11.08","0号柴油":"8.14"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-22","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[9.89,9.47,9.05,8.29,8.53,9.08,8.9,9.2,9.41,9.72,10,9.48],"95号汽油":[10.51,10.06,9.62,8.8,9.06,9.65,9.45,9.77,9.99,10.33,10.63,10.08],"98号汽油":[9.49,9.49,9.49,9.49,9.49,9.49,9.49,9.49,9.49,9.49,9.49,9.49],"0号柴油":[8.56,8.12,7.7,6.91,7.16,7.72,7.53,7.84,8.06,8.39,8.68,8.14]}}},"四川":{"slug":"sichuan","prices":{"92号汽油":"8.46","95号汽油":"9.04","98号汽油":"10.32","0号柴油":"8.09"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-22","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.87,8.45,8.04,7.28,7.52,8.06,7.88,8.18,8.39,8.7,8.98,8.46],"95号汽油":[9.47,9.03,8.59,7.78,8.03,8.62,8.42,8.74,8.96,9.3,9.59,9.04],"98号汽油":[12.25,12.25,12.25,11.37,11.37,11.37,11.37,11.37,11.37,11.37,11.37,11.37],"0号柴油":[8.5,8.08,7.66,6.88,7.13,7.68,7.5,7.8,8.01,8.34,8.62,8.09]}}},"贵州":{"slug":"guizhou","prices":{"92号汽油":"8.50","95号汽油":"8.98","98号汽油":"9.98","0号柴油":"8.16"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-06","2026-06-19","2026-06-24","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.52,8.1,8.1,7.34,7.58,8.13,7.95,8.25,8.46,8.77,9.05,8.53],"95号汽油":[9,8.56,8.56,7.75,8.01,8.59,8.4,8.71,8.93,9.27,9.56,9.02],"98号汽油":[10.19,10.19,10.19,10.19,10.19,10.19,10.19,10.19,10.19,10.19,10.19,10.19],"0号柴油":[8.17,7.77,7.74,6.96,7.21,7.77,7.58,7.89,8.1,8.43,8.72,8.19]}}},"云南":{"slug":"yunnan","prices":{"92号汽油":"8.52","95号汽油":"9.14","98号汽油":"9.82","0号柴油":"8.12"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-07-04","2026-07-05","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-13","2026-09-25","2026-10-30","2026-11-13","2026-11-14"],"series":{"92号汽油":[7.32,7.32,7.56,8.12,7.93,8.23,8.44,8.44,8.76,9.04,9.04,8.52],"95号汽油":[7.86,8.07,8.12,8.71,8.51,8.84,9.06,9.06,9.4,9.7,9.7,9.14],"98号汽油":[8.54,8.54,8.8,9.39,9.19,9.52,9.52,9.74,10.08,10.38,9.82,9.82],"0号柴油":[6.9,6.9,7.15,7.71,7.52,7.83,8.04,8.04,8.37,8.65,8.12,8.12]}}},"西藏":{"slug":"xizang","prices":{"92号汽油":"9.24","95号汽油":"9.77","98号汽油":"10.76","0号柴油":"8.58"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-22","2026-06-05","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-13"],"series":{"92号汽油":[9.64,9.22,8.82,8.06,8.3,8.84,8.66,8.96,9.17,9.48,9.75,9.24],"95号汽油":[10.2,9.76,9.32,8.53,8.78,9.35,9.16,9.48,9.69,10.03,10.32,9.77],"98号汽油":[10.75,10.75,10.75,10.75,10.75,10.75,10.75,10.75,10.75,10.75,10.75,10.75],"0号柴油":[9,8.57,8.15,7.37,7.62,8.17,7.99,8.29,8.5,8.83,9.11,8.58]}}},"陕西":{"slug":"shanxi1","prices":{"92号汽油":"8.25","95号汽油":"8.72","98号汽油":"9.96","0号柴油":"7.94"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-22","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.65,8.23,7.82,7.07,7.31,7.85,7.67,7.97,8.17,8.49,8.76,8.25],"95号汽油":[9.14,8.7,8.27,7.47,7.72,8.3,8.1,8.42,8.64,8.97,9.26,8.72],"98号汽油":[12.98,12.98,12.98,12.98,12.98,12.98,12.98,12.98,12.98,12.98,12.98,12.98],"0号柴油":[8.52,8.09,7.67,6.89,7.14,7.7,7.51,7.82,8.03,8.36,8.64,8.11]}}},"甘肃":{"slug":"gansu","prices":{"92号汽油":"8.37","95号汽油":"8.94","98号汽油":"9.51","0号柴油":"7.95"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-22","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.78,8.36,7.94,7.17,7.42,7.97,7.78,8.09,8.3,8.61,8.89,8.37],"95号汽油":[9.37,8.92,8.48,7.66,7.92,8.51,8.31,8.63,8.86,9.2,9.49,8.94],"98号汽油":[0,0,0,0,0,0,0,0,0,0,0,0],"0号柴油":[8.36,7.93,7.51,6.73,6.98,7.54,7.35,7.66,7.87,8.2,8.48,7.95]}}},"青海":{"slug":"qinghai","prices":{"92号汽油":"8.33","95号汽油":"8.93","98号汽油":"9.73","0号柴油":"7.97"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-19","2026-06-28","2026-06-29","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-13"],"series":{"92号汽油":[7.9,7.9,7.9,7.13,7.37,7.93,7.74,8.04,8.25,8.57,8.85,8.33],"95号汽油":[8.47,8.47,8.47,7.65,7.91,8.5,8.3,8.62,8.85,9.19,9.48,8.93],"98号汽油":[9.22,9.22,9.22,8.33,8.62,9.26,9.04,9.39,9.64,10.01,10.33,9.78],"0号柴油":[7.53,7.55,7.53,6.75,7,7.56,7.37,7.68,7.89,8.22,8.5,7.97]}}},"宁夏":{"slug":"ningxia","prices":{"92号汽油":"8.26","95号汽油":"8.73","98号汽油":"9.95","0号柴油":"7.93"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-09","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-13","2026-11-14"],"series":{"92号汽油":[8.25,7.84,7.08,7.32,7.87,7.68,7.98,8.19,8.5,8.78,8.78,8.26],"95号汽油":[8.72,8.28,7.48,7.74,8.31,8.12,8.43,8.65,8.98,9.27,9.27,8.73],"98号汽油":[9.93,9.93,9.93,9.93,9.93,9.93,9.93,9.93,9.93,9.93,9.93,9.93],"0号柴油":[7.91,7.49,6.72,6.96,7.52,7.33,7.64,7.85,8.18,8.46,7.93,7.93]}}},"新疆":{"slug":"xinjiang","prices":{"92号汽油":"8.17","95号汽油":"8.74","98号汽油":"9.92","0号柴油":"7.82"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-28","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.15,7.74,6.98,7.22,7.74,7.56,7.74,7.86,8.07,8.39,8.69,8.17],"95号汽油":[8.72,8.28,7.46,7.72,8.29,8.1,8.29,8.42,8.64,8.98,9.29,8.74],"98号汽油":[9.87,9.87,9.87,9.87,9.87,9.87,9.87,9.87,9.87,9.87,9.87,9.87],"0号柴油":[8.23,7.38,6.61,6.85,7.39,7.2,7.2,7.5,7.71,8.04,8.35,7.82]}}},"内蒙古":{"slug":"neimenggu","prices":{"92号汽油":"8.37","95号汽油":"8.90","98号汽油":"9.72","0号柴油":"7.90"},"update":"2026-11-18 08:00:06","history":{"dates":["2026-05-29","2026-06-06","2026-06-19","2026-07-04","2026-07-18","2026-08-01","2026-08-22","2026-08-29","2026-09-12","2026-09-25","2026-10-30","2026-11-14"],"series":{"92号汽油":[8.78,8.36,7.94,7.18,7.42,7.97,7.79,8.09,8.3,8.62,8.89,8.37],"95号汽油":[9.33,8.88,8.44,7.63,7.88,8.47,8.27,8.59,8.81,9.15,9.45,8.9],"98号汽油":[9.02,9.02,9.02,9.02,9.02,9.02,9.02,9.02,9.02,9.02,9.02,9.02],"0号柴油":[8.25,7.88,7.46,6.69,6.93,7.49,7.3,7.6,7.82,7.82,8.42,8.42]}}}};
+var PRODS = ["92号汽油", "95号汽油", "98号汽油", "0号柴油"];
+var COLORS = {'92号汽油':'#b91c1c','95号汽油':'#1e3a5f','98号汽油':'#92400e','0号柴油':'#15803d'};
+var selProv = document.getElementById('trendProv');
+var selProd = document.getElementById('trendProd');
+var curProduct = PRODS[0];
+
+function fmtDate(s){ return s ? s.slice(5) : ''; }
+
+function drawChart(){
+  var d = HDATA[selProv.value];
+  var wrap = document.getElementById('chartBox');
+  var stats = document.getElementById('trendStats');
+  var tbody = document.getElementById('trendTbody');
+  if(!d || !d.history || d.history.dates.length===0){
+    wrap.innerHTML = '<p class="oil-src">该地区历史数据未获取到</p>';
+    stats.innerHTML = ''; tbody.innerHTML = ''; return;
+  }
+  var dates = d.history.dates;
+  var vals = d.history.series[curProduct] || [];
+  var pts = vals.map(function(v,i){return {v:v, d:dates[i]};}).filter(function(p){return typeof p.v==='number';});
+  if(pts.length===0){ wrap.innerHTML='<p class="oil-src">该产品历史数据未获取到</p>'; return; }
+
+  var W=980, H=340, L=52, R=20, T=24, B=46;
+  var iw=W-L-R, ih=H-T-B;
+  var vs=pts.map(function(p){return p.v;});
+  var vmin=Math.min.apply(null,vs), vmax=Math.max.apply(null,vs);
+  var pad=Math.max((vmax-vmin)*0.25, 0.15);
+  vmin=Math.max(0,vmin-pad); vmax=vmax+pad;
+  function X(i){ return L + (pts.length===1?iw/2:i*iw/(pts.length-1)); }
+  function Y(v){ return T + ih - (v-vmin)/(vmax-vmin)*ih; }
+
+  var svg='<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" role="img">';
+  // 横向网格 + Y轴刻度
+  var ticks=5;
+  for(var g=0; g<=ticks; g++){
+    var val=vmin+(vmax-vmin)*g/ticks;
+    var y=Y(val);
+    svg+='<line x1="'+L+'" y1="'+y+'" x2="'+(W-R)+'" y2="'+y+'" stroke="#e5e7eb" stroke-width="1"/>';
+    svg+='<text x="'+(L-8)+'" y="'+(y+4)+'" text-anchor="end" font-size="12" fill="#6b7280">'+val.toFixed(1)+'</text>';
+  }
+  // 折线
+  var path=pts.map(function(p,i){return (i===0?'M':'L')+X(i).toFixed(1)+' '+Y(p.v).toFixed(1);}).join(' ');
+  svg+='<path d="'+path+'" fill="none" stroke="'+(COLORS[curProduct]||'#1e3a5f')+'" stroke-width="2.5" stroke-linejoin="round"/>';
+  // 数据点与日期标签
+  pts.forEach(function(p,i){
+    var x=X(i), y=Y(p.v);
+    svg+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="4" fill="#fff" stroke="'+(COLORS[curProduct]||'#1e3a5f')+'" stroke-width="2"/>';
+    svg+='<text x="'+x.toFixed(1)+'" y="'+(y-12).toFixed(1)+'" text-anchor="middle" font-size="11" fill="#4b5563">'+p.v.toFixed(2)+'</text>';
+    svg+='<text x="'+x.toFixed(1)+'" y="'+(H-16)+'" text-anchor="middle" font-size="11" fill="#6b7280">'+fmtDate(p.d)+'</text>';
+  });
+  svg+='</svg>';
+  wrap.innerHTML=svg;
+
+  // 统计
+  var first=pts[0].v, last=pts[pts.length-1].v;
+  var change=(last-first);
+  var pct=(change/first*100);
+  var cls=change>0?'up':(change<0?'down':'');
+  var sign=change>0?'+':'';
+  stats.innerHTML=
+    '<div class="stat"><span class="stat-label">当前价格</span><span class="stat-val">'+last.toFixed(2)+'</span></div>'+
+    '<div class="stat"><span class="stat-label">历史最低</span><span class="stat-val">'+Math.min.apply(null,vs).toFixed(2)+'</span></div>'+
+    '<div class="stat"><span class="stat-label">历史最高</span><span class="stat-val">'+Math.max.apply(null,vs).toFixed(2)+'</span></div>'+
+    '<div class="stat"><span class="stat-label">区间变化</span><span class="stat-val '+cls+'">'+sign+change.toFixed(2)+' ('+sign+pct.toFixed(1)+'%)</span></div>';
+
+  // 表格（最近 12 次，倒序）
+  var rows='';
+  for(var i=pts.length-1;i>=0;i--){
+    var p=pts[i];
+    var prev=i>0?pts[i-1].v:null;
+    var delta=prev!==null?(p.v-prev):null;
+    var dtxt=delta===null?'—':((delta>0?'+':'')+delta.toFixed(2));
+    var dcls=delta===null?'':(delta>0?'delta-up':(delta<0?'delta-down':''));
+    rows+='<tr><td>'+p.d+'</td><td>'+p.v.toFixed(2)+'</td><td class="'+dcls+'">'+dtxt+'</td></tr>';
+  }
+  tbody.innerHTML=rows;
+}
+
+document.getElementById('trendProv').addEventListener('change', drawChart);
+document.getElementById('trendProd').addEventListener('change', function(){curProduct=this.value; drawChart();});
+drawChart();
+</script>
+
+
+<script>
+(function(){
+  var PROVINCES = ["北京", "上海", "天津", "重庆", "河北", "山西", "辽宁", "吉林", "黑龙江", "江苏", "浙江", "安徽", "福建", "江西", "山东", "河南", "湖北", "湖南", "广东", "广西", "海南", "四川", "贵州", "云南", "西藏", "陕西", "甘肃", "青海", "宁夏", "新疆", "内蒙古"];
+  var SEL_ID = 'trendProv';
+  var TIP_ID = 'locTipTrend';
+  var EN2CN = {
+    beijing:'北京',tianjin:'天津',shanghai:'上海',chongqing:'重庆',
+    hebei:'河北',shanxi:'山西',liaoning:'辽宁',jilin:'吉林',heilongjiang:'黑龙江',
+    jiangsu:'江苏',zhejiang:'浙江',anhui:'安徽',fujian:'福建',jiangxi:'江西',
+    shandong:'山东',henan:'河南',hubei:'湖北',hunan:'湖南',guangdong:'广东',
+    hainan:'海南',sichuan:'四川',guizhou:'贵州',yunnan:'云南',shaanxi:'陕西',
+    gansu:'甘肃',qinghai:'青海',xinjiang:'新疆',ningxia:'宁夏',
+    'inner mongolia':'内蒙古',guangxi:'广西',xizang:'西藏',tibet:'西藏'
+  };
+  function norm(s){
+    if(!s) return '';
+    s = String(s).trim();
+    if(PROVINCES.indexOf(s)>=0) return s;
+    var t = s.replace(/(省|市|特别行政区|壮族自治区|回族自治区|维吾尔自治区|自治区)$/,'');
+    if(PROVINCES.indexOf(t)>=0) return t;
+    var t2 = t.replace(/(壮族|回族|维吾尔|自治)/g,'');
+    if(PROVINCES.indexOf(t2)>=0) return t2;
+    var first = s.toLowerCase().split(/[\s,]/)[0];
+    if(EN2CN[first] && PROVINCES.indexOf(EN2CN[first])>=0) return EN2CN[first];
+    return '';
+  }
+  function getJSON(url){
+    return new Promise(function(res,rej){
+      var ctl = window.AbortController ? new AbortController() : null;
+      var timer = setTimeout(function(){ if(ctl) ctl.abort(); rej(new Error('timeout')); }, 6000);
+      fetch(url,{signal:ctl?ctl.signal:undefined,cache:'no-store'})
+        .then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); })
+        .then(function(j){ clearTimeout(timer); res(j); })
+        .catch(function(e){ clearTimeout(timer); rej(e); });
+    });
+  }
+  function fireChange(el){
+    try{ el.dispatchEvent(new Event('change')); }
+    catch(e){ var ev=document.createEvent('HTMLEvents'); ev.initEvent('change',true,true); el.dispatchEvent(ev); }
+  }
+  function apply(prov){
+    if(!prov) return false;
+    var sel = document.getElementById(SEL_ID);
+    if(!sel) return false;
+    for(var i=0;i<sel.options.length;i++){
+      if(sel.options[i].value===prov){
+        sel.value = prov;
+        fireChange(sel);
+        var tip = document.getElementById(TIP_ID);
+        if(tip){ tip.textContent = '已按 IP 自动定位：'+prov+'（可手动切换）'; tip.className='loc-tip ok'; }
+        return true;
+      }
+    }
+    return false;
+  }
+  function fail(){
+    var tip = document.getElementById(TIP_ID);
+    if(tip){ tip.textContent='自动定位未成功，请手动选择'; tip.className='loc-tip warn'; }
+  }
+  function run(){
+    getJSON('https://myip.ipip.net/json')
+      .then(function(j){ var loc=j&&j.data&&j.data.location; return norm(loc&&loc[1]); })
+      .catch(function(){ return ''; })
+      .then(function(p){
+        if(p && apply(p)) return;
+        return getJSON('https://api.ip.sb/geoip')
+          .then(function(k){ return norm(k&&k.region); })
+          .catch(function(){ return ''; })
+          .then(function(p2){ if(!p2 || !apply(p2)) fail(); });
+      });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run);
+  else run();
+})();
+</script>
+
+</body>
+</html>

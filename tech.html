@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科技热点 · 2026年11月18日</title>
+<meta name="description" content="今日热点速览，来源可核查。">
+<style>
+  :root{
+    --bg:#f4f6f9;--card:#ffffff;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#6b7280;
+    --line:#e5e7eb;--navy:#1e3a5f;--navy-soft:#eef2f7;--red:#b91c1c;--red-soft:#fef2f2;
+    --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.05);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
+  header{background:linear-gradient(135deg,#1e3a5f 0%,#2c5282 55%,#1a365d 100%);color:#fff;
+    padding:46px 0 40px;margin-bottom:28px;border-bottom:4px solid var(--red);}
+  .h-inner{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+    padding:5px 12px;border-radius:999px;margin-bottom:16px;}
+  header h1{font-size:36px;line-height:1.25;margin:0 0 12px;letter-spacing:.5px;}
+  header h1 a{color:inherit;text-decoration:none;}
+  .dateline{font-size:15px;color:rgba(255,255,255,.82);margin:0;}
+  .dateline b{color:#fff;font-weight:600;}
+  .h-meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:rgba(255,255,255,.72);}
+  .h-meta span{display:inline-flex;align-items:center;gap:7px;}
+  .dot{width:6px;height:6px;border-radius:50%;background:#fca5a5;display:inline-block;}
+  section{margin-top:34px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--navy);}
+  .sec-no{font-size:13px;font-weight:700;color:var(--red);letter-spacing:.1em;}
+  .sec-head h2{font-size:22px;margin:0;color:var(--navy);letter-spacing:.5px;}
+  .sec-note{font-size:12px;color:var(--ink-3);margin-left:auto;}
+  /* ---------- Oil price ---------- */
+  .oil{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);
+    border-radius:10px;padding:18px 22px;box-shadow:var(--shadow);margin-bottom:16px;}
+  .oil-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:14px;}
+  .oil-head h3{font-size:17px;margin:0;color:var(--navy);}
+  .oil-head .oil-meta{font-size:12px;color:var(--ink-3);margin-left:auto;}
+  .oil-ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px;}
+  .oil-ctrl label{font-size:13px;color:var(--ink-2);}
+  .oil-ctrl select{font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:6px;
+    background:#fff;color:var(--ink);cursor:pointer;}
+  .trend-btn{font-size:13px;color:#fff;background:var(--navy);text-decoration:none;
+    border-radius:6px;padding:6px 14px;white-space:nowrap;}
+  .trend-btn:hover{background:var(--red);}
+  .oil-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;}
+  .oil-item{background:var(--navy-soft);border-radius:8px;padding:12px 14px;text-align:center;}
+  .oil-name{font-size:12px;color:var(--ink-2);display:block;margin-bottom:4px;}
+  .oil-val{font-size:22px;color:var(--red);font-weight:800;line-height:1.2;}
+  .oil-unit{font-size:11px;color:var(--ink-3);margin-left:2px;font-weight:400;}
+  .loc-tip{font-size:11.5px;color:var(--ink-3);margin-left:auto;white-space:nowrap;}
+  .loc-tip.ok{color:#15803d;}
+  .loc-tip.warn{color:#b91c1c;}
+  .home-entry{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--ink-2);}
+  .home-entry a{display:inline-block;background:var(--red);color:#fff;text-decoration:none;
+    padding:9px 20px;border-radius:8px;font-weight:600;transition:.2s;}
+  .home-entry a:hover{background:#991b1b;}
+  .oil-src{font-size:11.5px;color:var(--ink-3);margin-top:12px;}
+  .oil-src a{color:var(--navy);text-decoration:none;border-bottom:1px dotted #9fb3c8;}
+  .flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;}
+  .flash{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--red);
+    border-radius:10px;padding:18px 18px 16px;box-shadow:var(--shadow);display:flex;gap:14px;}
+  .flash-num{flex:0 0 34px;height:34px;border-radius:8px;background:var(--red-soft);color:var(--red);
+    font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;}
+  .flash h3{font-size:16px;line-height:1.5;margin:1px 0 6px;color:var(--ink);}
+  .flash h3 a{color:inherit;text-decoration:none;}
+  .flash h3 a:hover{color:var(--red);}
+  .flash p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .flash-tag{display:inline-block;font-size:11px;color:var(--navy);background:var(--navy-soft);
+    border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:1px;}
+  .news-list{display:grid;gap:12px;}
+  article.news{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--navy);
+    border-radius:8px;padding:16px 20px 14px;box-shadow:var(--shadow);}
+  article.news:hover{border-left-color:var(--red);}
+  .news-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;}
+  .news-top h3{font-size:16.5px;margin:0;flex:1 1 460px;line-height:1.5;color:var(--ink);}
+  .news-top h3 a{color:inherit;text-decoration:none;}
+  .news-top h3 a:hover{color:var(--red);}
+  .when{flex:0 0 auto;font-size:12px;color:var(--navy);background:var(--navy-soft);
+    border-radius:5px;padding:2px 9px;white-space:nowrap;}
+  .summary{font-size:14px;color:var(--ink-2);margin:8px 0 10px;}
+  .meta{font-size:12px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 18px;}
+  .meta a{color:var(--navy);text-decoration:none;border-bottom:1px dotted #9fb3c8;}
+  .meta a:hover{color:var(--red);border-bottom-color:var(--red);}
+  .more{display:inline-block;font-size:13px;color:var(--navy);text-decoration:none;
+    background:var(--navy-soft);border-radius:6px;padding:4px 12px;margin-left:auto;}
+  .more:hover{background:var(--navy);color:#fff;}
+  .back{display:inline-block;font-size:13px;color:var(--navy);text-decoration:none;
+    background:var(--navy-soft);border-radius:6px;padding:4px 12px;margin-bottom:4px;}
+  .back:hover{background:var(--navy);color:#fff;}
+  footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3);}
+  footer h4{font-size:13px;color:var(--ink-2);margin:0 0 8px;}
+  footer ul{margin:0;padding-left:18px;} footer li{margin-bottom:5px;}
+  /* ---------- Trend page ---------- */
+  .trend-panel{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);
+    border-radius:10px;padding:22px 24px;box-shadow:var(--shadow);}
+  .trend-ctrl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px;}
+  .trend-ctrl label{font-size:13px;color:var(--ink-2);}
+  .trend-ctrl select{font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:6px;
+    background:#fff;color:var(--ink);cursor:pointer;}
+  .trend-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:18px 0;}
+  .stat{background:var(--navy-soft);border-radius:8px;padding:14px;text-align:center;}
+  .stat-label{font-size:12px;color:var(--ink-2);display:block;}
+  .stat-val{font-size:20px;font-weight:800;color:var(--navy);}
+  .stat-val.up{color:var(--red);} .stat-val.down{color:var(--green,#15803d);}
+  .chart-wrap{width:100%;overflow-x:auto;}
+  .chart-wrap svg{display:block;width:100%;height:auto;min-width:600px;}
+  .chart-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--ink-2);margin-top:12px;}
+  .chart-legend i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:5px;vertical-align:3px;}
+  .trend-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;}
+  .trend-table th,.trend-table td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);}
+  .trend-table th{background:var(--navy-soft);color:var(--navy);font-weight:600;}
+  .trend-table tr:hover td{background:#fafbfc;}
+  .delta-up{color:var(--red);} .delta-down{color:var(--green,#15803d);}
+  @media (max-width:640px){header h1{font-size:28px;}.sec-note{display:none;}
+    article.news{padding:14px 15px;}.flash{padding:15px;}}
+</style>
+</head>
+<body>
+
+
+<header><div class="h-inner">
+  <span class="kicker">Daily Briefing · 公开信源核验</span>
+  <h1>科技 · 全部热点</h1>
+  <p class="dateline"><b>2026年11月18日　星期三　22:33 更新</b>　|　科技 · 共 12 条</p>
+  <div class="h-meta">
+    <span><i class="dot"></i>内容自动抓取自公开 RSS 源</span>
+    <span><i class="dot"></i>点击标题可跳转原文核对</span>
+    <a class="back" href="index.html">← 返回首页</a>
+  </div>
+</div></header>
+<div class="wrap">
+  <section>
+    <div class="sec-head"><span class="sec-no">01</span><h2>科技热点</h2><span class="sec-note">12 条</span></div>
+    <div class="news-list">
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/111.htm" target="_blank" rel="noopener">微星 RTX Spark 迷你主机 EdgeMesa N AI+ 上市：64GB + 1TB 售 33999 元</a></h3><span class="when">2026-11-18 22:24</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，NVIDIA（英伟达）今日正式解禁了 RTX Spark 迷你主机的销售，而与华硕 ProArt GR1X 一道进入市场的还有微星 (MSI) 的 EdgeMesa N AI+。这一机型同样提供两档配置：64GB + 1TB 售价 33,999 元、128GB + </p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/111.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 22:24</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/110.htm" target="_blank" rel="noopener">腾讯：WorkBuddy 最近七天收入按年化折算超 5 亿美元，三季度收入是第二季度的 5 倍以上</a></h3><span class="when">2026-11-18 22:15</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，据腾讯公司公关总监张军分享，在今晚的分析师会上，Martin（腾讯总裁刘炽平）透露 WorkBuddy 最近七天的收入按年化折算超过 5 亿美元（IT之家注：现汇率约合 33.34 亿元人民币），是腾讯会议的两倍以上，三季度收入是第二季度的 5 倍以上，中国百强企业</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/110.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 22:15</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/104.htm" target="_blank" rel="noopener">超 250 万人同时围观，《GTA 6》发售仅半小时创下 Twitch 单机游戏收视纪录</a></h3><span class="when">2026-11-18 22:09</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，对于全球游戏行业来说，今天无疑是一个具有里程碑意义的时刻。《GTA 6》媒体评测正式解禁，这款游戏也成为有史以来评分最高的游戏。与此同时，评测解禁时间恰逢游戏在新西兰正式发售，当地午夜钟声敲响后，玩家开始陆续体验这款期待已久的大作。一些玩家选择通过调整主机时间等方式</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/104.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 22:09</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/094.htm" target="_blank" rel="noopener">2026 年苹果 App Store Awards 入围名单揭晓，含《燕云十六声》《潜水员戴夫》等</a></h3><span class="when">2026-11-18 22:04</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，苹果今日公布了 2026 年 App Store Awards 的 45 位入围者名单。官方表示，这些来自世界各地的开发者所打造的 App 和游戏在技术创新、用户体验和设计领域均展现了非凡成就。IT之家获悉，今年的入围作品涵盖 iPhone、iPad、Mac、App</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/094.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 22:04</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/093.htm" target="_blank" rel="noopener">铭凡 5L 台式机 T5 Max-388 上市：48GB + 1TB，到手价 9699 元</a></h3><span class="when">2026-11-18 22:04</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，MINISFORUM（铭凡）现已通过国行电商渠道销售 5L 紧凑台式整机 T5 Max-388。该机型基于 AMD 锐龙 AI Max+ 388 处理器，配备 48GB 的 LPDDR5-6400 内存，预装 1TB SSD 存储，到手价 9699 元。京东铭凡 T</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/093.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 22:04</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/091.htm" target="_blank" rel="noopener">英国一学校出招对抗“GTA 流感”，用抽奖鼓励学生按时上课</a></h3><span class="when">2026-11-18 21:58</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，今天（18 日）晚间开始，全球各地纷纷进入《GTA 6》时间，全球预计会有不少上班族打算请假，争取第一时间玩上游戏。有学校也担心学生会为了玩《GTA 6》而逃课，甚至想出了一些不同寻常的办法来保证出勤率。据英国 BBC 报道，北爱尔兰贝尔法斯特男子模范学校决定用抽奖</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/091.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 21:58</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/090.htm" target="_blank" rel="noopener">低过 10 元 / 月：迅雷超级会员 11.11 直降，12T 网盘 + 每天 1000 次云添加</a></h3><span class="when">2026-11-18 21:56</span></div>
+      <p class="summary">迅雷超级会员年卡日常售价 360 元，连续包年为 264 元（22 元 / 月）。今日 30 个月券后直降至 298 元，单月约合 9.93 元官方好价：京东迅雷超级会员 30 个月补贴后 9.93 元 / 月券后 298 元领 20 元券京东迅雷超级会员 15 个月补贴后 10.6 元 / 月券后</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/090.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 21:56</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/089.htm" target="_blank" rel="noopener">玩家为何能听见警察的无线电通话？《GTA 6》终于给出解释</a></h3><span class="when">2026-11-18 21:56</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，如果你玩过《GTA》系列的任何一款正统作品，想必都曾在犯罪后听到警察通过无线电通报你的违法行为，这一设定从系列第一部作品开始就一直存在。不过，《GTA 6》却是系列中第一款真正解释主角为什么能够听到警察无线电通话的游戏。在《GTA 6》的早期剧情中，杰森（Jason</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/089.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 21:56</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/088.htm" target="_blank" rel="noopener">商汤 2026 年前三季度营收 37.92 亿元，同比增长 30.4%</a></h3><span class="when">2026-11-18 21:52</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，商汤今日发布 2026 财年（2026 年 1 月～2026 年 12 月）前三季度（2026 年 1 月～2026 年 9 月）报告：营业总收入：37.92 亿元，同比增长 30.4%毛利润：16.47 亿元，同比增长 45%毛利率：43.4%AI 解读本次商汤集</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/088.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 21:52</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/087.htm" target="_blank" rel="noopener">消息称三星电子计划在 CES 2027 发布 2 款人形机器人</a></h3><span class="when">2026-11-18 21:51</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，韩媒《韩民族日报》当地时间昨日报道称，三星电子计划在明年 1 月举行的 CES 2027 消费电子展上发布 2 款人形机器人。这两款产品的名称分别为 HR (Human Reference) 和 HE (Humanoid Extreme)，分别为入门和高端型号，其中</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/087.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 21:51</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/086.htm" target="_blank" rel="noopener">张朝阳再度回应搜狐“躺平”：大模型投入太大，没资源来做这个事情</a></h3><span class="when">2026-11-18 21:46</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，据光明日报消息，搜狐张朝阳再次回应搜狐“躺平”相关话题。对于如今外界认为搜狐“躺平”的看法，张朝阳称一个公司肯定要根据自己的资源来决定做什么。大模型投入太大，搜狐没资源来做这个事情。推荐算法和 AI 很新鲜，但你会发现人们大多数时间还是主流应用，人和人的连接、交流变</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/086.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 21:46</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.ithome.com/1/029/084.htm" target="_blank" rel="noopener">AMD 推出 Instinct MI450X 显卡加速器：MI455X 同核心规格，显存降至 288GB HBM4</a></h3><span class="when">2026-11-18 21:39</span></div>
+      <p class="summary">IT之家 11 月 18 日消息，AMD 当地时间本月 12 日宣布以 MI450X 显卡加速器扩展 Instinct MI400 系列显卡加速器产品线。这一型号拥有与此前推出的 MI455X 完全相同的核心规格，算力保持不变；但其显存容量从 MI455X 的 432GB 降至 288GB（减少 1</p>
+      <div class="meta"><span>来源：<a href="https://www.ithome.com/1/029/084.htm" target="_blank" rel="noopener">IT之家</a></span><span>发布日期：2026-11-18 21:39</span></div>
+    </article>
+    </div>
+  </section>
+  
+<footer>
+  <h4>信息核实说明</h4>
+  <ul>
+    <li>所有条目来自公开 RSS 源（人民网、中新网、IT之家等），标题、时间与来源均可点击原文核对。</li>
+    <li>发生时间以来源发布时间为准；部分源仅提供发布日期，已按原文展示。</li>
+    <li>本页由脚本自动生成，为聚合展示，不代表本站观点。</li>
+  </ul>
+</footer>
+</div>
+</body>
+</html>

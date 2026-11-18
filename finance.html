@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>财经热点 · 2026年11月18日</title>
+<meta name="description" content="今日热点速览，来源可核查。">
+<style>
+  :root{
+    --bg:#f4f6f9;--card:#ffffff;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#6b7280;
+    --line:#e5e7eb;--navy:#1e3a5f;--navy-soft:#eef2f7;--red:#b91c1c;--red-soft:#fef2f2;
+    --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.05);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
+  header{background:linear-gradient(135deg,#1e3a5f 0%,#2c5282 55%,#1a365d 100%);color:#fff;
+    padding:46px 0 40px;margin-bottom:28px;border-bottom:4px solid var(--red);}
+  .h-inner{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+    padding:5px 12px;border-radius:999px;margin-bottom:16px;}
+  header h1{font-size:36px;line-height:1.25;margin:0 0 12px;letter-spacing:.5px;}
+  header h1 a{color:inherit;text-decoration:none;}
+  .dateline{font-size:15px;color:rgba(255,255,255,.82);margin:0;}
+  .dateline b{color:#fff;font-weight:600;}
+  .h-meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:rgba(255,255,255,.72);}
+  .h-meta span{display:inline-flex;align-items:center;gap:7px;}
+  .dot{width:6px;height:6px;border-radius:50%;background:#fca5a5;display:inline-block;}
+  section{margin-top:34px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--navy);}
+  .sec-no{font-size:13px;font-weight:700;color:var(--red);letter-spacing:.1em;}
+  .sec-head h2{font-size:22px;margin:0;color:var(--navy);letter-spacing:.5px;}
+  .sec-note{font-size:12px;color:var(--ink-3);margin-left:auto;}
+  /* ---------- Oil price ---------- */
+  .oil{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);
+    border-radius:10px;padding:18px 22px;box-shadow:var(--shadow);margin-bottom:16px;}
+  .oil-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:14px;}
+  .oil-head h3{font-size:17px;margin:0;color:var(--navy);}
+  .oil-head .oil-meta{font-size:12px;color:var(--ink-3);margin-left:auto;}
+  .oil-ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px;}
+  .oil-ctrl label{font-size:13px;color:var(--ink-2);}
+  .oil-ctrl select{font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:6px;
+    background:#fff;color:var(--ink);cursor:pointer;}
+  .trend-btn{font-size:13px;color:#fff;background:var(--navy);text-decoration:none;
+    border-radius:6px;padding:6px 14px;white-space:nowrap;}
+  .trend-btn:hover{background:var(--red);}
+  .oil-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;}
+  .oil-item{background:var(--navy-soft);border-radius:8px;padding:12px 14px;text-align:center;}
+  .oil-name{font-size:12px;color:var(--ink-2);display:block;margin-bottom:4px;}
+  .oil-val{font-size:22px;color:var(--red);font-weight:800;line-height:1.2;}
+  .oil-unit{font-size:11px;color:var(--ink-3);margin-left:2px;font-weight:400;}
+  .loc-tip{font-size:11.5px;color:var(--ink-3);margin-left:auto;white-space:nowrap;}
+  .loc-tip.ok{color:#15803d;}
+  .loc-tip.warn{color:#b91c1c;}
+  .home-entry{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--ink-2);}
+  .home-entry a{display:inline-block;background:var(--red);color:#fff;text-decoration:none;
+    padding:9px 20px;border-radius:8px;font-weight:600;transition:.2s;}
+  .home-entry a:hover{background:#991b1b;}
+  .oil-src{font-size:11.5px;color:var(--ink-3);margin-top:12px;}
+  .oil-src a{color:var(--navy);text-decoration:none;border-bottom:1px dotted #9fb3c8;}
+  .flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;}
+  .flash{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--red);
+    border-radius:10px;padding:18px 18px 16px;box-shadow:var(--shadow);display:flex;gap:14px;}
+  .flash-num{flex:0 0 34px;height:34px;border-radius:8px;background:var(--red-soft);color:var(--red);
+    font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;}
+  .flash h3{font-size:16px;line-height:1.5;margin:1px 0 6px;color:var(--ink);}
+  .flash h3 a{color:inherit;text-decoration:none;}
+  .flash h3 a:hover{color:var(--red);}
+  .flash p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .flash-tag{display:inline-block;font-size:11px;color:var(--navy);background:var(--navy-soft);
+    border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:1px;}
+  .news-list{display:grid;gap:12px;}
+  article.news{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--navy);
+    border-radius:8px;padding:16px 20px 14px;box-shadow:var(--shadow);}
+  article.news:hover{border-left-color:var(--red);}
+  .news-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;}
+  .news-top h3{font-size:16.5px;margin:0;flex:1 1 460px;line-height:1.5;color:var(--ink);}
+  .news-top h3 a{color:inherit;text-decoration:none;}
+  .news-top h3 a:hover{color:var(--red);}
+  .when{flex:0 0 auto;font-size:12px;color:var(--navy);background:var(--navy-soft);
+    border-radius:5px;padding:2px 9px;white-space:nowrap;}
+  .summary{font-size:14px;color:var(--ink-2);margin:8px 0 10px;}
+  .meta{font-size:12px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 18px;}
+  .meta a{color:var(--navy);text-decoration:none;border-bottom:1px dotted #9fb3c8;}
+  .meta a:hover{color:var(--red);border-bottom-color:var(--red);}
+  .more{display:inline-block;font-size:13px;color:var(--navy);text-decoration:none;
+    background:var(--navy-soft);border-radius:6px;padding:4px 12px;margin-left:auto;}
+  .more:hover{background:var(--navy);color:#fff;}
+  .back{display:inline-block;font-size:13px;color:var(--navy);text-decoration:none;
+    background:var(--navy-soft);border-radius:6px;padding:4px 12px;margin-bottom:4px;}
+  .back:hover{background:var(--navy);color:#fff;}
+  footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3);}
+  footer h4{font-size:13px;color:var(--ink-2);margin:0 0 8px;}
+  footer ul{margin:0;padding-left:18px;} footer li{margin-bottom:5px;}
+  /* ---------- Trend page ---------- */
+  .trend-panel{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);
+    border-radius:10px;padding:22px 24px;box-shadow:var(--shadow);}
+  .trend-ctrl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px;}
+  .trend-ctrl label{font-size:13px;color:var(--ink-2);}
+  .trend-ctrl select{font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:6px;
+    background:#fff;color:var(--ink);cursor:pointer;}
+  .trend-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:18px 0;}
+  .stat{background:var(--navy-soft);border-radius:8px;padding:14px;text-align:center;}
+  .stat-label{font-size:12px;color:var(--ink-2);display:block;}
+  .stat-val{font-size:20px;font-weight:800;color:var(--navy);}
+  .stat-val.up{color:var(--red);} .stat-val.down{color:var(--green,#15803d);}
+  .chart-wrap{width:100%;overflow-x:auto;}
+  .chart-wrap svg{display:block;width:100%;height:auto;min-width:600px;}
+  .chart-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--ink-2);margin-top:12px;}
+  .chart-legend i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:5px;vertical-align:3px;}
+  .trend-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;}
+  .trend-table th,.trend-table td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);}
+  .trend-table th{background:var(--navy-soft);color:var(--navy);font-weight:600;}
+  .trend-table tr:hover td{background:#fafbfc;}
+  .delta-up{color:var(--red);} .delta-down{color:var(--green,#15803d);}
+  @media (max-width:640px){header h1{font-size:28px;}.sec-note{display:none;}
+    article.news{padding:14px 15px;}.flash{padding:15px;}}
+</style>
+</head>
+<body>
+
+
+<header><div class="h-inner">
+  <span class="kicker">Daily Briefing · 公开信源核验</span>
+  <h1>财经 · 全部热点</h1>
+  <p class="dateline"><b>2026年11月18日　星期三　22:33 更新</b>　|　财经 · 共 12 条</p>
+  <div class="h-meta">
+    <span><i class="dot"></i>内容自动抓取自公开 RSS 源</span>
+    <span><i class="dot"></i>点击标题可跳转原文核对</span>
+    <a class="back" href="index.html">← 返回首页</a>
+  </div>
+</div></header>
+<div class="wrap">
+  <section>
+    <div class="sec-head"><span class="sec-no">01</span><h2>财经热点</h2><span class="sec-note">12 条</span></div>
+    <div class="news-list">
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734397.shtml" target="_blank" rel="noopener">“中国发展论坛·2026”聚焦现代化产业体系</a></h3><span class="when">2026-11-18 21:58</span></div>
+      <p class="summary">中新社辽宁葫芦岛11月18日电 (姜月恒 罗鲁峤)“中国发展论坛·2026”18日在辽宁葫芦岛举行，围绕“构建以先进制造业为骨干的现代化产业体系”主题开展研讨。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734397.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 21:58</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734310.shtml" target="_blank" rel="noopener">浙江金华：铁路物流如何护航“纸通天下”？</a></h3><span class="when">2026-11-18 21:39</span></div>
+      <p class="summary">中新网金华11月18日电(董易鑫)11月18日，四趟满载卷纸的集装箱班列抵达位于浙江的金华南站，货物来自江苏、山东、湖北、湖南等地。值得一提的是，这是中国国家铁路集团有限公司物流中心在全国范围内首次组织纸品集结班列。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734310.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 21:39</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734380.shtml" target="_blank" rel="noopener">（乡村行·看振兴）一条骑行路带富一方人 广西马山深耕骑行生态促振兴</a></h3><span class="when">2026-11-18 21:37</span></div>
+      <p class="summary">中新网南宁11月18日电 题：一条骑行路带富一方人 广西马山深耕骑行生态促振兴</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734380.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 21:37</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734372.shtml" target="_blank" rel="noopener">云南两地地标品牌亮相上海 供应链重构破解区域农产品瓶颈</a></h3><span class="when">2026-11-18 21:34</span></div>
+      <p class="summary">中新网上海11月18日电 (杨硕)16日至18日，由中国连锁经营协会主办的2026CCFA零售创新大会在上海举行，大会以“零售能力的重构”为主题。来自云南的镇雄县“赤水源品”和昭通市“昭通天麻”两大区域公用品牌携方竹、二荆条辣椒、高山魔芋、赤水香猪以及乌天麻等特色农产品亮相会场，以供应链重构破解“大</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734372.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 21:34</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734384.shtml" target="_blank" rel="noopener">中国算力产业高速增长 赋能人工智能发展</a></h3><span class="when">2026-11-18 21:33</span></div>
+      <p class="summary">中新社武汉11月18日电 (记者 梁婷)2026算力互联网大会18日在武汉开幕，中国工业和信息化部信息通信科技委常务副主任兼秘书长韩夏介绍，中国算力产业呈高速增长态势，截至今年9月底，国家算力互联网服务平台已面向全国分配算力标识1198万条，汇聚资源362EFLOPS(每秒进行百亿亿次浮点运算，下同</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734384.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 21:33</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734351.shtml" target="_blank" rel="noopener">宁夏优化新能源用地保障结构 要素供给向储能配套倾斜</a></h3><span class="when">2026-11-18 21:13</span></div>
+      <p class="summary">中新网银川11月18日电 (记者 于晶)18日，记者从宁夏回族自治区自然资源厅获悉，今年以来，宁夏依托国土空间规划精准配置土地要素，保障光伏、风电、新型储能等新能源项目落地，用地保障重心逐步向储能等产业链关键环节转移，助力新型能源体系建设。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734351.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 21:13</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734348.shtml" target="_blank" rel="noopener">国开行宁夏分行投放1.07亿元信贷 保障老年慢病用药稳产</a></h3><span class="when">2026-11-18 21:12</span></div>
+      <p class="summary">中新网银川11月18日电 (记者 于晶)18日，记者从国家开发银行宁夏分行获悉，该行聚焦老年慢性病用药保供与医药研发创新，累计为宁夏本土老年药品生产企业授信1.8亿元、发放贷款1.07亿元，精准支持区内药企稳产扩产，持续提升宁夏老年慢病用药本土供给能力。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734348.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 21:12</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734355.shtml" target="_blank" rel="noopener">新型电网，新在哪？（产经视野·聚焦“六张网”）</a></h3><span class="when">2026-11-18 20:53</span></div>
+      <p class="summary">本报记者 王云杉</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734355.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 20:53</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734311.shtml" target="_blank" rel="noopener">AI赋能+外商直采 浙江拱墅激活专业市场外贸新动能</a></h3><span class="when">2026-11-18 20:39</span></div>
+      <p class="summary">中新网杭州11月18日电(奚金燕 李旻煜 魏涛)11月18日，第五届中非经贸西湖大会五金机电专场活动在浙江杭州拱墅区启幕。来自非洲以及共建“一带一路”国家的30余位海外采购商走进浙江建华五金机电市场，与参展商和市场商户面对面洽谈，共探合作新蓝海。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734311.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 20:39</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734279.shtml" target="_blank" rel="noopener">中国将围绕降本增效进一步为企业“减负”</a></h3><span class="when">2026-11-18 20:25</span></div>
+      <p class="summary">中新社北京11月18日电 (记者 刘亮)记者18日自中国工信部获悉，国务院减轻企业负担部际联席会议办公室负责人表示，联席会议明年将围绕降本增效，进一步完善惠企减负政策运行机制。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734279.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 20:25</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734328.shtml" target="_blank" rel="noopener">一张收款码，如何让小店接住国际客流？</a></h3><span class="when">2026-11-18 20:17</span></div>
+      <p class="summary">在深圳蛇口一家面包店的收银台前，一位越南游客掏出手机，扫了扫柜台边的二维码，几秒钟就付完了款。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734328.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 20:17</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/cj/2026/11-18/10734270.shtml" target="_blank" rel="noopener">沪市15只产业园区REITs前三季度可供分配金额合计超9亿元</a></h3><span class="when">2026-11-18 18:58</span></div>
+      <p class="summary">中新网上海11月18日电 (高志苗)记者18日从上海证券交易所获悉，沪市15只产业园区REITs近日完成2026年第三季度报告披露，多个项目出租率同比回升，租金收缴率普遍保持高位，前三季度可供分配金额合计超9亿元；按11月17日市值计算，板块加权平均分派率接近6.9%，高分红特征进一步凸显长期配置价</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/cj/2026/11-18/10734270.shtml" target="_blank" rel="noopener">中新网·财经</a></span><span>发布日期：2026-11-18 18:58</span></div>
+    </article>
+    </div>
+  </section>
+  
+<footer>
+  <h4>信息核实说明</h4>
+  <ul>
+    <li>所有条目来自公开 RSS 源（人民网、中新网、IT之家等），标题、时间与来源均可点击原文核对。</li>
+    <li>发生时间以来源发布时间为准；部分源仅提供发布日期，已按原文展示。</li>
+    <li>本页由脚本自动生成，为聚合展示，不代表本站观点。</li>
+  </ul>
+</footer>
+</div>
+</body>
+</html>
