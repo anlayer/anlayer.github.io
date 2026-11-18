@@ -3,61 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>国际热点 · 2026年11月18日</title>
+<title>国际热点 · 2026年11月19日</title>
 <meta name="description" content="今日热点速览，来源可核查。">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f5f6f8;color:#1a1a1a;line-height:1.6}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-header{background:#fff;border-bottom:1px solid #e8e8e8;padding:28px 0 22px;margin-bottom:24px}
-h1{font-size:26px;font-weight:600;letter-spacing:-.3px}
-h1 a{color:inherit;text-decoration:none}
-.sub{color:#777;font-size:13px;margin-top:6px}
-.top{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:22px 26px;margin-bottom:28px}
-.top h2{font-size:15px;font-weight:600;margin-bottom:14px;color:#c0392b}
-.top ol{list-style:none}
-.top li{display:flex;align-items:baseline;gap:12px;padding:9px 0;border-top:1px solid #f0f0f0}
-.top li:first-child{border-top:0}
-.num{color:#c0392b;font-size:13px;font-weight:600;min-width:18px}
-.top a{color:#1a1a1a;text-decoration:none;font-size:14px;flex:1}
-.top a:hover{color:#c0392b}
-.tag{color:#999;font-size:12px;white-space:nowrap}
-section{margin-bottom:30px}
-.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.sec-head h2{font-size:18px;font-weight:600;padding-left:10px;border-left:3px solid #c0392b}
-.count{font-size:12px;color:#aaa;font-weight:400;margin-left:8px}
-.more{color:#c0392b;text-decoration:none;font-size:13px;padding:5px 12px;border:1px solid #c0392b;border-radius:20px;white-space:nowrap}
-.more:hover{background:#c0392b;color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
-.news{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:16px 18px;transition:border-color .2s}
-.news:hover{border-color:#c0392b}
-.news a{color:#1a1a1a;text-decoration:none;font-size:14px;font-weight:500;line-height:1.5}
-.news a:hover{color:#c0392b}
-.desc{color:#666;font-size:12.5px;margin:8px 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.meta{display:flex;justify-content:space-between;font-size:11.5px;color:#999}
-.src{color:#c0392b}
-.back{display:inline-block;margin-bottom:16px;color:#666;text-decoration:none;font-size:13px}
-.back:hover{color:#c0392b}
-footer{background:#fff;border-top:1px solid #e8e8e8;padding:20px 0 30px;color:#999;font-size:12px}
-@media(max-width:600px){h1{font-size:21px}.grid{grid-template-columns:1fr}}
+  :root{
+    --bg:#f4f6f9;--card:#ffffff;--ink:#1f2937;--ink-2:#4b5563;--ink-3:#6b7280;
+    --line:#e5e7eb;--navy:#1e3a5f;--navy-soft:#eef2f7;--red:#b91c1c;--red-soft:#fef2f2;
+    --shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.05);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
+  header{background:linear-gradient(135deg,#1e3a5f 0%,#2c5282 55%,#1a365d 100%);color:#fff;
+    padding:46px 0 40px;margin-bottom:28px;border-bottom:4px solid var(--red);}
+  .h-inner{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+    padding:5px 12px;border-radius:999px;margin-bottom:16px;}
+  header h1{font-size:36px;line-height:1.25;margin:0 0 12px;letter-spacing:.5px;}
+  header h1 a{color:inherit;text-decoration:none;}
+  .dateline{font-size:15px;color:rgba(255,255,255,.82);margin:0;}
+  .dateline b{color:#fff;font-weight:600;}
+  .h-meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13px;color:rgba(255,255,255,.72);}
+  .h-meta span{display:inline-flex;align-items:center;gap:7px;}
+  .dot{width:6px;height:6px;border-radius:50%;background:#fca5a5;display:inline-block;}
+  section{margin-top:34px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--navy);}
+  .sec-no{font-size:13px;font-weight:700;color:var(--red);letter-spacing:.1em;}
+  .sec-head h2{font-size:22px;margin:0;color:var(--navy);letter-spacing:.5px;}
+  .sec-note{font-size:12px;color:var(--ink-3);margin-left:auto;}
+  /* ---------- Oil price ---------- */
+  .oil{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);
+    border-radius:10px;padding:18px 22px;box-shadow:var(--shadow);margin-bottom:16px;}
+  .oil-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:14px;}
+  .oil-head h3{font-size:17px;margin:0;color:var(--navy);}
+  .oil-head .oil-meta{font-size:12px;color:var(--ink-3);margin-left:auto;}
+  .oil-ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px;}
+  .oil-ctrl label{font-size:13px;color:var(--ink-2);}
+  .oil-ctrl select{font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:6px;
+    background:#fff;color:var(--ink);cursor:pointer;}
+  .trend-btn{font-size:13px;color:#fff;background:var(--navy);text-decoration:none;
+    border-radius:6px;padding:6px 14px;white-space:nowrap;}
+  .trend-btn:hover{background:var(--red);}
+  .oil-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;}
+  .oil-item{background:var(--navy-soft);border-radius:8px;padding:12px 14px;text-align:center;}
+  .oil-name{font-size:12px;color:var(--ink-2);display:block;margin-bottom:4px;}
+  .oil-val{font-size:22px;color:var(--red);font-weight:800;line-height:1.2;}
+  .oil-unit{font-size:11px;color:var(--ink-3);margin-left:2px;font-weight:400;}
+  .loc-tip{font-size:11.5px;color:var(--ink-3);margin-left:auto;white-space:nowrap;}
+  .loc-tip.ok{color:#15803d;}
+  .loc-tip.warn{color:#b91c1c;}
+  .home-entry{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--ink-2);}
+  .home-entry a{display:inline-block;background:var(--red);color:#fff;text-decoration:none;
+    padding:9px 20px;border-radius:8px;font-weight:600;transition:.2s;}
+  .home-entry a:hover{background:#991b1b;}
+  /* 搜索与刷新工具栏 */
+  .toolbar{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;margin-bottom:26px;box-shadow:var(--shadow);}
+  .toolbar-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .search-wrap{position:relative;flex:1;min-width:220px;}
+  .search-input{width:100%;font-size:15px;padding:11px 14px 11px 40px;border:1px solid var(--line);
+    border-radius:8px;outline:none;background:#fff;color:var(--ink);}
+  .search-input:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(30,58,95,.08);}
+  .search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:16px;}
+  .btn-refresh,.btn-rebuild{font-size:13px;padding:10px 16px;border-radius:8px;cursor:pointer;
+    text-decoration:none;white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--ink-2);}
+  .btn-refresh{background:var(--navy);border-color:var(--navy);color:#fff;}
+  .btn-refresh:hover{background:#162d4a;}
+  .btn-rebuild:hover{border-color:var(--navy);color:var(--navy);}
+  .toolbar-meta{font-size:11.5px;color:var(--ink-3);margin-top:10px;}
+  .toolbar-meta a{color:var(--navy);border-bottom:1px dotted #9fb3c8;text-decoration:none;}
+  #searchResults{margin-top:12px;}
+  .search-count{font-size:12px;color:var(--ink-3);margin-bottom:8px;}
+  .search-hit{display:block;padding:10px 12px;border-left:3px solid var(--navy);
+    background:var(--navy-soft);border-radius:0 6px 6px 0;margin-bottom:8px;text-decoration:none;}
+  .search-hit:hover{border-left-color:var(--red);}
+  .search-hit .s-cat{display:inline-block;font-size:11px;color:#fff;background:var(--navy);
+    padding:1px 7px;border-radius:4px;margin-right:8px;}
+  .search-hit .s-title{font-size:14px;color:var(--ink);font-weight:600;}
+  .search-hit .s-sub{font-size:11.5px;color:var(--ink-3);margin-top:3px;}
+  .oil-src{font-size:11.5px;color:var(--ink-3);margin-top:12px;}
+  .oil-src a{color:var(--navy);text-decoration:none;border-bottom:1px dotted #9fb3c8;}
+  .flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;}
+  .flash{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--red);
+    border-radius:10px;padding:18px 18px 16px;box-shadow:var(--shadow);display:flex;gap:14px;}
+  .flash-num{flex:0 0 34px;height:34px;border-radius:8px;background:var(--red-soft);color:var(--red);
+    font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;}
+  .flash h3{font-size:16px;line-height:1.5;margin:1px 0 6px;color:var(--ink);}
+  .flash h3 a{color:inherit;text-decoration:none;}
+  .flash h3 a:hover{color:var(--red);}
+  .flash p{font-size:13.5px;color:var(--ink-2);margin:0;}
+  .flash-tag{display:inline-block;font-size:11px;color:var(--navy);background:var(--navy-soft);
+    border-radius:4px;padding:1px 7px;margin-right:6px;vertical-align:1px;}
+  .news-list{display:grid;gap:12px;}
+  article.news{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--navy);
+    border-radius:8px;padding:16px 20px 14px;box-shadow:var(--shadow);}
+  article.news:hover{border-left-color:var(--red);}
+  .news-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;}
+  .news-top h3{font-size:16.5px;margin:0;flex:1 1 460px;line-height:1.5;color:var(--ink);}
+  .news-top h3 a{color:inherit;text-decoration:none;}
+  .news-top h3 a:hover{color:var(--red);}
+  .when{flex:0 0 auto;font-size:12px;color:var(--navy);background:var(--navy-soft);
+    border-radius:5px;padding:2px 9px;white-space:nowrap;}
+  .summary{font-size:14px;color:var(--ink-2);margin:8px 0 10px;}
+  .meta{font-size:12px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 18px;}
+  .meta a{color:var(--navy);text-decoration:none;border-bottom:1px dotted #9fb3c8;}
+  .meta a:hover{color:var(--red);border-bottom-color:var(--red);}
+  .more{display:inline-block;font-size:13px;color:var(--navy);text-decoration:none;
+    background:var(--navy-soft);border-radius:6px;padding:4px 12px;margin-left:auto;}
+  .more:hover{background:var(--navy);color:#fff;}
+  .back{display:inline-block;font-size:13px;color:var(--navy);text-decoration:none;
+    background:var(--navy-soft);border-radius:6px;padding:4px 12px;margin-bottom:4px;}
+  .back:hover{background:var(--navy);color:#fff;}
+  footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3);}
+  footer h4{font-size:13px;color:var(--ink-2);margin:0 0 8px;}
+  footer ul{margin:0;padding-left:18px;} footer li{margin-bottom:5px;}
+  /* ---------- Trend page ---------- */
+  .trend-panel{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--navy);
+    border-radius:10px;padding:22px 24px;box-shadow:var(--shadow);}
+  .trend-ctrl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px;}
+  .trend-ctrl label{font-size:13px;color:var(--ink-2);}
+  .trend-ctrl select{font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:6px;
+    background:#fff;color:var(--ink);cursor:pointer;}
+  .trend-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:18px 0;}
+  .stat{background:var(--navy-soft);border-radius:8px;padding:14px;text-align:center;}
+  .stat-label{font-size:12px;color:var(--ink-2);display:block;}
+  .stat-val{font-size:20px;font-weight:800;color:var(--navy);}
+  .stat-val.up{color:var(--red);} .stat-val.down{color:var(--green,#15803d);}
+  .chart-wrap{width:100%;overflow-x:auto;}
+  .chart-wrap svg{display:block;width:100%;height:auto;min-width:600px;}
+  .chart-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--ink-2);margin-top:12px;}
+  .chart-legend i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:5px;vertical-align:3px;}
+  .trend-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;}
+  .trend-table th,.trend-table td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);}
+  .trend-table th{background:var(--navy-soft);color:var(--navy);font-weight:600;}
+  .trend-table tr:hover td{background:#fafbfc;}
+  .delta-up{color:var(--red);} .delta-down{color:var(--green,#15803d);}
+  @media (max-width:640px){header h1{font-size:28px;}.sec-note{display:none;}
+    article.news{padding:14px 15px;}.flash{padding:15px;}}
 </style>
 </head>
 <body>
 
-<header><div class="wrap">
+
+<header><div class="h-inner">
+  <span class="kicker">Daily Briefing · 公开信源核验</span>
   <h1>国际 · 全部热点</h1>
-  <div class="sub">2026年11月18日 星期三 · 更新于 22:09 · 共 1 条</div>
+  <p class="dateline"><b>2026年11月19日　星期四　06:30 更新</b>　|　国际 · 共 3 条</p>
+  <div class="h-meta">
+    <span><i class="dot"></i>内容自动抓取自公开 RSS 源</span>
+    <span><i class="dot"></i>点击标题可跳转原文核对</span>
+    <a class="back" href="index.html">← 返回首页</a>
+  </div>
 </div></header>
 <div class="wrap">
-  <a class="back" href="index.html">← 返回首页</a>
-  <div class="grid">
-      <article class="news">
-        <a href="https://www.chinanews.com.cn/gj/2026/11-18/10734352.shtml" target="_blank" rel="noopener">日本新潟县佐渡附近发生5.0级地震</a>
-        <p class="desc">中新网东京11月18日电 (记者 朱晨曦)据日本气象厅消息，当地时间18日18时37分(北京时间17时37分)，日本新潟县佐渡附近发生5.0级地震。日本气象厅说该地震不会引发海啸。</p>
-        <div class="meta"><span class="src">中新网·即时</span><span>11-18 21:45</span></div>
-      </article>
-  </div>
+  <section>
+    <div class="sec-head"><span class="sec-no">01</span><h2>国际热点</h2><span class="sec-note">3 条</span></div>
+    <div class="news-list">
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/gj/2026/11-19/10734436.shtml" target="_blank" rel="noopener">以军称在加沙地带“黄线”以西开展地道拆除行动</a></h3><span class="when">2026-11-19 06:05</span></div>
+      <p class="summary">新华社耶路撒冷11月18日电(记者王卓伦 庞昕熠)以色列国防军和国家安全总局(辛贝特)18日发表联合声明说，以安全部队当天在加沙地带“黄线”以西开展针对性军事行动，拆除一条据称对以军构成直接且紧迫威胁的地道。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/gj/2026/11-19/10734436.shtml" target="_blank" rel="noopener">中新网·即时</a></span><span>发布日期：2026-11-19 06:05</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/gj/2026/11-19/10734434.shtml" target="_blank" rel="noopener">美国民主党提名杰弗里斯为众议院议长</a></h3><span class="when">2026-11-19 06:03</span></div>
+      <p class="summary">新华社华盛顿11月18日电(记者施春)美国众议院民主党党团18日提名现任众议院民主党领袖哈基姆·杰弗里斯为下届众议院议长，使他有望成为美国历史上首位非洲裔众议院议长。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/gj/2026/11-19/10734434.shtml" target="_blank" rel="noopener">中新网·即时</a></span><span>发布日期：2026-11-19 06:03</span></div>
+    </article>
+    <article class="news">
+      <div class="news-top"><h3><a href="https://www.chinanews.com.cn/gj/2026/11-18/10734425.shtml" target="_blank" rel="noopener">英国10月通胀率升至一年来新高</a></h3><span class="when">2026-11-18 23:32</span></div>
+      <p class="summary">中新社伦敦11月18日电 (记者 欧阳开宇)英国官方18日公布的数据显示，英国10月消费者价格指数(CPI)同比上涨3.6%，较9月3.5%的涨幅小幅抬升，创下一年以来通胀率最高水平。</p>
+      <div class="meta"><span>来源：<a href="https://www.chinanews.com.cn/gj/2026/11-18/10734425.shtml" target="_blank" rel="noopener">中新网·即时</a></span><span>发布日期：2026-11-18 23:32</span></div>
+    </article>
+    </div>
+  </section>
+  
+<footer>
+  <h4>信息核实说明</h4>
+  <ul>
+    <li>所有条目来自公开 RSS 源（人民网、中新网、IT之家等），标题、时间与来源均可点击原文核对。</li>
+    <li>发生时间以来源发布时间为准；部分源仅提供发布日期，已按原文展示。</li>
+    <li>本页由脚本自动生成，为聚合展示，不代表本站观点。</li>
+  </ul>
+</footer>
 </div>
-<footer><div class="wrap">所有内容来自公开 RSS 源，点击标题跳转原文核对。本页由脚本自动生成。</div></footer>
 </body>
 </html>
